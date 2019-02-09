@@ -1,0 +1,3 @@
+pidev_homepage:
+    path:     /
+    defaults: { _controller: PIDEVBundle:Default:index }
