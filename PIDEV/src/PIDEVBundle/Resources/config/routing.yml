@@ -1,3 +1,87 @@
 pidev_homepage:
-    path:     /
+    path:     /user
     defaults: { _controller: PIDEVBundle:Default:index }
+
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: PIDEVBundle:Default:admin }
+
+cite_register:
+    path:     /register
+    defaults: { _controller: PIDEVBundle:Registration:register }
+
+_ajout_evenement:
+    path:     /ajoutE
+    defaults: { _controller: PIDEVBundle:Evenement:AjoutEvenement }
+
+ajout_evenement1:
+    path:     /ajoutE1
+    defaults: { _controller: PIDEVBundle:Evenement:AjouterEvenement1 }
+
+_modifier_evenement:
+    path:     /modifE
+    defaults: { _controller: PIDEVBundle:Evenement:ModifierEvenement }
+
+_supprimer_evenement:
+    path:     /suppE
+    defaults: { _controller: PIDEVBundle:Evenement:SupprimerEvenement }
+
+lister_evenement:
+    path:     /afficherevenement
+    defaults: { _controller: PIDEVBundle:Evenement:Lister }
+
+_redirect:
+    path:     /Redirect
+    defaults: { _controller: PIDEVBundle:Security:Redirect }
+
+ajoutReservation:
+    path:     /ajoutReservation/{idE}/{idW}
+    defaults: { _controller: PIDEVBundle:ReservationController:ajoutReservation,idE: null  ,idW: null  }
+
+affichageReservation:
+    path:     /affichageReservation
+    defaults: { _controller: PIDEVBundle:ReservationController:affichageReservation }
+
+modificationReservation:
+    path:     /modificationReservation/{id}
+    defaults: { _controller: PIDEVBundle:ReservationController:modificationReservation }
+
+suppressionReservation:
+    path:     /suppressionReservation/{id}
+    defaults: { _controller: PIDEVBundle:ReservationController:suppressionReservation }
+
+ajoutReservationBack:
+    path:     /ajoutReservationBack
+    defaults: { _controller: PIDEVBundle:ReservationBack:ajoutReservation }
+
+affichageReservationBack:
+    path:     /affichageReservationBack
+    defaults: { _controller: PIDEVBundle:ReservationBack:affichageReservation }
+
+modificationReservationBack:
+    path:     /modificationReservationBack/{id}
+    defaults: { _controller: PIDEVBundle:ReservationBack:modificationReservation }
+
+suppressionReservationBack:
+    path:     /suppressionReservationBack/{id}
+    defaults: { _controller: PIDEVBundle:ReservationBack:suppressionReservation }
+
+affichageSalle:
+    path:     /affichageSalle
+    defaults: { _controller: PIDEVBundle:Salle:affichageSalle }
+
+ajoutSalle:
+    path:     /ajoutSalle
+    defaults: { _controller: PIDEVBundle:Salle:ajoutSalle }
+
+modificationSalle:
+    path:     /modificationSalle/{id}
+    defaults: { _controller: PIDEVBundle:Salle:modificationSalle }
+
+suppressionSalle:
+    path:     /suppressionSalle/{id}
+    defaults: { _controller: PIDEVBundle:Salle:suppressionSalle }
+
+sallesDisponibles:
+    path:     /affichageSallesDisponiblesParDate
+    defaults: { _controller: PIDEVBundle:Salle:affichageSallesDisponiblesParDate }
