@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<center><h1>Liste des évènements </h1>
+
+    {% for evenement in m %}
+
+    Nom: {{ evenement.nom }}
+    Prix:{{ evenement.prix }}
+    Date de début:  {{ evenement.dateebut|date }}
+    <a href="{{ path("ajoutReservation",{'idE':evenement.id}) }}"><b><button>Je participe</button></b>  </a>
+
+
+    {% endfor %}
+</center>
+{% endblock %}

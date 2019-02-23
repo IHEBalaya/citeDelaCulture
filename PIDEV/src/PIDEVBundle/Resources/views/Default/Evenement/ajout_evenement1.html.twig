@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <!-- Contact form Section Start -->
+            <div class="col-md-6">
+                <h2>Déposez un evenement   </h2>
+                <form enctype="multipart/form-data" method="post" class="contact" >
+
+                    <div class="form-group">
+                        <input type="number" class="form-control input-lg" name="prix" placeholder="prix" min="0" max="60" >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" name="description" placeholder="description">
+                    </div><br>
+                    <br>
+
+                    <div>
+                    <select class="form-control" name="salle" >
+                        <option value="grande salle">grande salle</option>
+                        <option value="petite salle">petite salle</option>
+
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" name="nom" placeholder="nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Date debut : </label>    <input type="date" class="form-control input-lg" name="dateebut" placeholder="date debut">
+                    </div>
+                    <div class="form-group">
+                        <label> Date fin : </label>    <input type="date" class="form-control input-lg" name="dateFin" placeholder="date Fin ">
+                    </div>
+
+                    <div class="input-group">
+                        <button class="btn btn-primary" type="submit">  Valider  </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock content%}

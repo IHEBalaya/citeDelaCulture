@@ -1,0 +1,26 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <center>
+        <h1>Vos salles</h1>
+        <h1>Vos salles</h1>
+
+        {% for salle in salles %}
+            <hr>
+            <h3> Identifiant:&nbsp;{{ salle.id }}</h3>
+            <h3>Nom:&nbsp;{{ salle.nom }}</h3>
+            <h3>Capacité:&nbsp; {{ salle.capacite }}</h3>
+            <h3>Type:&nbsp; {{ salle.type }}</h3>
+            <h3>État:&nbsp; {% if salle.etat==0 %}
+                     La salle est occupée !
+                {% else %}  La salle est disponible !
+                 {% endif %}</h3>
+            <a href="{{ path("modificationSalle",{'id':salle.id}) }}"><b><button>Modifier</button></b>  </a>
+
+            <a href="{{ path("suppressionSalle",{'id':salle.id}) }}"> &nbsp; <b><button>Supprimer</button></b> </a>
+            <hr>
+        {% endfor %}
+
+    </center>
+
+{% endblock %}

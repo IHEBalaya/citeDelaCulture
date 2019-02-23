@@ -1,0 +1,23 @@
+{% extends 'admin.html.twig' %}
+{% block content %}
+    <center>
+        <h1> Vos réservations </h1>
+
+        {% for reservation in reservations %}
+            <hr  >
+            <h3> Date:&nbsp;{{ reservation.date|date }}</h3>
+            <h3>Nombre de personnes à assister:&nbsp;{{ reservation.nbrPersonne }}</h3>
+            <h3>Prix total:&nbsp; {{ reservation.prixTot }}</h3>
+            <h3>Évènement/Workshop associé:&nbsp;{% if reservation.evenement %}
+                Évènement:   {{ reservation.evenement.nom }}
+            {% elseif reservation.workshop %} Workshop: {{ reservation.workshop.nom }}
+                {% endif %} </h3>
+            <a href="{{ path("modificationReservationBack",{'id':reservation.id}) }}"><b><button>Modifier</button></b>  </a>
+
+            <a href="{{ path("suppressionReservationBack",{'id':reservation.id}) }}"> &nbsp; <b><button>Supprimer</button></b> </a>
+            <hr>
+        {% endfor %}
+
+    </center>
+
+{% endblock %}

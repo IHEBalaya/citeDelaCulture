@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}PIDEVBundle:Evenement:SupprimerEvenement{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Evenement:SupprimerEvenement page</h1>
+{% endblock %}
+<div class="form-group">
+    <label class="col-md-3 control-label" for="date De debut">Date De Debut</label>
+    <div class="col-md-9">
+        {{ form_widget(form.dateebut, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="form-group">
+    <label class="col-md-3 control-label" for="date Fin">Date FIN</label>
+    <div class="col-md-9">
+        {{ form_widget(form.dateFin, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="form-group">
+    <label class="col-md-3 control-label" for="nom">nom</label>
+    <div class="col-md-9">
+        {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="form-group">
+    <label class="col-md-3 control-label" for="message">Description</label>
+    <div class="col-md-9">
+
+        {{ form_widget(form.description, {'attr': {'class': 'form-control resize_vertical'}}) }}
+
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-md-3 control-label" for="prix">Prix</label>
+    <div class="col-md-9">
+        {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
