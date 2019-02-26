@@ -1,0 +1,35 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register </title>
+    <!--global css starts-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/favicon.png')}}" type="image/x-icon">
+    <!--end of global css-->
+
+    <!--page level css starts-->
+    <link type="text/css" rel="stylesheet" href="{{ asset('vendors/icheck/skins/all.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/register.css')}}">
+    <!--end of page level css-->
+</head>
+{% block fos_user_content %}
+
+{% endblock fos_user_content %}
+<!--global js starts-->
+<script type="text/javascript" src="{{ asset('js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+<!--global js end-->
+<script type="text/javascript" src="{{ asset('vendors/icheck/icheck.min.js ')}}"></script>
+<script>
+    $(document).ready(function(){
+        $("input[type='checkbox'],input[type='radio']").iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue'
+        });
+    });
+</script>
+</html>
