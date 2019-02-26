@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+    <div style="text-align: center">
+
+    <h1>Liste des Produit</h1><br><br><br>
+        <div style="text-align:justify">
+    {% for p in produits %}
+
+            <h3>Libelle: {{ p.libelle }}  <div style="text-align: center"> Prix:  {{ p.prix }}dt </div> </h3>
+        <h4><td><a href="{{ path("ajouter_au_panier",{'id':p.id})}}">Commander</a></td></h4><br>
+
+    {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+<section class="card card-admin">
+    <header class="card-header">
+
+
+        <h2 class="card-title" align="center">Panier </h2>
+    </header>
+    <div class="card-body">
+
+        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Quantite</th>
+                <th>Prix Total</th>
+                <th>Nom Du Produit</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in paniers %}
+                <tr data-item-id="1">
+                    <td> {{ p.id }} </td>
+                    <td>{{ p.nbArticle }}</td>
+                    <td>{{ p.total }}</td>
+                    <td>{{  p.product.libelle }}</td>
+
+
+                </tr>
+
+            {%endfor%}
+        </table>
+    </div>
+</section>
+</div>
+{% endblock %}
