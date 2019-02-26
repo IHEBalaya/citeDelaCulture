@@ -394,28 +394,4 @@ class Workshop
     {
         return $this->images;
     }
-
-    /**
-     * Set rating
-     *
-     * @param string $rating
-     *
-     * @return Workshop
-     */
-    public function setRating($rating)
-    {
-        $this->rating = $rating;
-
-        return $this;
-    }
-
-    /**
-     * Get rating
-     *
-     * @return string
-     */
-    public function getRating()
-    {
-        return $this->rating;
-    }
 }
