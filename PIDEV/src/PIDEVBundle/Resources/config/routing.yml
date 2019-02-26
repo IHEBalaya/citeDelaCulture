@@ -1,87 +1,84 @@
 pidev_homepage:
     path:     /user
     defaults: { _controller: PIDEVBundle:Default:index }
-
 admin_homepage:
-    path:     /admin
-    defaults: { _controller: PIDEVBundle:Default:admin }
-
+        path:     /admin
+        defaults: { _controller: PIDEVBundle:Default:admin }
 cite_register:
-    path:     /register
-    defaults: { _controller: PIDEVBundle:Registration:register }
-
-_ajout_evenement:
+  path:   /register
+  defaults: { _controller: PIDEVBundle:Registration:register }
+ajout_evenement:
     path:     /ajoutE
     defaults: { _controller: PIDEVBundle:Evenement:AjoutEvenement }
 
 ajout_evenement1:
-    path:     /ajoutE1
-    defaults: { _controller: PIDEVBundle:Evenement:AjouterEvenement1 }
+  path:     /ajoutE1
+  defaults: { _controller: PIDEVBundle:Evenement:AjouterEvenement1 }
 
-_modifier_evenement:
-    path:     /modifE
+modifier_evenement:
+    path:     /modifE/{id}
     defaults: { _controller: PIDEVBundle:Evenement:ModifierEvenement }
 
-_supprimer_evenement:
-    path:     /suppE
+supprimer_evenement:
+    path:     /suppE/{id}
     defaults: { _controller: PIDEVBundle:Evenement:SupprimerEvenement }
-
 lister_evenement:
-    path:     /afficherevenement
-    defaults: { _controller: PIDEVBundle:Evenement:Lister }
+  path:     /afficherevenement
+  defaults: { _controller: PIDEVBundle:Evenement:lister }
+listerH_evenement:
+  path:     /afficherevenementh
+  defaults: { _controller: PIDEVBundle:Evenement:ListerHistorique }
 
 _redirect:
     path:     /Redirect
     defaults: { _controller: PIDEVBundle:Security:Redirect }
 
-ajoutReservation:
-    path:     /ajoutReservation/{idE}/{idW}
-    defaults: { _controller: PIDEVBundle:ReservationController:ajoutReservation,idE: null  ,idW: null  }
+after_login:
+    path:     /AfterLogin
+    defaults: { _controller: PIDEVBundle:AfterLogin:AfterLogin }
 
-affichageReservation:
-    path:     /affichageReservation
-    defaults: { _controller: PIDEVBundle:ReservationController:affichageReservation }
-
-modificationReservation:
-    path:     /modificationReservation/{id}
-    defaults: { _controller: PIDEVBundle:ReservationController:modificationReservation }
-
-suppressionReservation:
-    path:     /suppressionReservation/{id}
-    defaults: { _controller: PIDEVBundle:ReservationController:suppressionReservation }
-
-ajoutReservationBack:
-    path:     /ajoutReservationBack
-    defaults: { _controller: PIDEVBundle:ReservationBack:ajoutReservation }
-
-affichageReservationBack:
-    path:     /affichageReservationBack
-    defaults: { _controller: PIDEVBundle:ReservationBack:affichageReservation }
-
-modificationReservationBack:
-    path:     /modificationReservationBack/{id}
-    defaults: { _controller: PIDEVBundle:ReservationBack:modificationReservation }
-
-suppressionReservationBack:
-    path:     /suppressionReservationBack/{id}
-    defaults: { _controller: PIDEVBundle:ReservationBack:suppressionReservation }
-
-affichageSalle:
-    path:     /affichageSalle
-    defaults: { _controller: PIDEVBundle:Salle:affichageSalle }
-
-ajoutSalle:
-    path:     /ajoutSalle
-    defaults: { _controller: PIDEVBundle:Salle:ajoutSalle }
-
-modificationSalle:
-    path:     /modificationSalle/{id}
-    defaults: { _controller: PIDEVBundle:Salle:modificationSalle }
-
-suppressionSalle:
-    path:     /suppressionSalle/{id}
-    defaults: { _controller: PIDEVBundle:Salle:suppressionSalle }
-
-sallesDisponibles:
-    path:     /affichageSallesDisponiblesParDate
-    defaults: { _controller: PIDEVBundle:Salle:affichageSallesDisponiblesParDate }
+lister:
+    path:     /lister
+    defaults: { _controller: PIDEVBundle:adminE:lister }
+modif:
+  path:     /supp/{id}
+  defaults: { _controller: PIDEVBundle:adminE:ModifEvenement }
+ajoutCategorie:
+      path:     /ajoutC
+      defaults: { _controller: PIDEVBundle:adminE:ajoutCategorie }
+a_recherche2:
+  path:     /recherche2
+  defaults: { _controller: PIDEVBundle:Evenement:recherche2 }
+affiche_evenement:
+    path:     /afficheE/{id}
+    defaults: { _controller: PIDEVBundle:Evenement:AfficherEvenement }
+ajoutinter:
+    path:     /ajoutInter/{ide}
+    defaults: { _controller: PIDEVBundle:Interesse:ajout }
+listerinter:
+      path:     /listerinter
+      defaults: { _controller: PIDEVBundle:Interesse:ListerI }
+listerc:
+        path:     /listerC
+        defaults: { _controller: PIDEVBundle:adminE:ListeC }
+supprimerC:
+        path:     /supprimC/{id}
+        defaults: { _controller: PIDEVBundle:adminE:SupprimerC }
+listerEvent:
+  path:     /li/{idcategorie}
+  defaults: { _controller: PIDEVBundle:Evenement:SelectEvenement }
+ajouterCategorie:
+    path:     /ajouterC
+    defaults: { _controller: PIDEVBundle:Categorie:ajoutCategorie }
+mesevenements:
+  path:     /mes
+  defaults: { _controller: PIDEVBundle:Evenement:afficherMesevenement }
+voirCategorie:
+  path:     /voirC
+  defaults: { _controller: PIDEVBundle:Categorie:listeC }
+listerparC:
+    path:     /listerC/{idcategorie}
+    defaults: { _controller: PIDEVBundle:Categorie:SelectEvenement}
+mesfavoris:
+  path:     /mesfavoris
+  defaults: { _controller: PIDEVBundle:Interesse:Mesfavoris}
