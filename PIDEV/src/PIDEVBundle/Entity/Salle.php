@@ -31,9 +31,17 @@ class Salle
     /**
      * @var int
      *
-     * @ORM\Column(name="nbPlace", type="integer")
+     * @ORM\Column(name="capacite", type="integer")
      */
-    private $nbPlace;
+    private $capacite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type",  type="string", length=255)
+     */
+    private $type;
+
     /**
      * @var int
      *
@@ -77,27 +85,53 @@ class Salle
     }
 
     /**
-     * Set nbPlace
+     * Set capacite
      *
-     * @param integer $nbPlace
+     * @param integer $capacite
      *
      * @return Salle
      */
-    public function setNbPlace($nbPlace)
+    public function setCapacite($capacite)
     {
-        $this->nbPlace = $nbPlace;
+        $this->capacite = $capacite;
 
         return $this;
     }
 
     /**
-     * Get nbPlace
+     * Get capacite
      *
      * @return int
      */
-    public function getNbPlace()
+    public function getCapacite()
     {
-        return $this->nbPlace;
+        return $this->capacite;
+    }
+
+
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Salle
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 
     /**

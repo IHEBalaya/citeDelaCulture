@@ -38,9 +38,9 @@ class Produit
     /**
      * @var int
      *
-     * @ORM\Column(name="nbrProduit", type="integer")
+     * @ORM\Column(name="nbProduit", type="integer")
      */
-    private $nbrProduit;
+    private $nbProduit;
 
 
     /**
@@ -102,27 +102,27 @@ class Produit
     }
 
     /**
-     * Set nbrProduit
+     * Set nbProduit
      *
-     * @param integer $nbrProduit
+     * @param integer $nbProduit
      *
      * @return Produit
      */
-    public function setNbrProduit($nbrProduit)
+    public function setNbProduit($nbProduit)
     {
-        $this->nbrProduit = $nbrProduit;
+        $this->nbProduit = $nbProduit;
 
         return $this;
     }
 
     /**
-     * Get nbrProduit
+     * Get nbProduit
      *
      * @return int
      */
-    public function getNbrProduit()
+    public function getNbProduit()
     {
-        return $this->nbrProduit;
+        return $this->nbProduit;
     }
 }
 
