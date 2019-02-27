@@ -1,0 +1,64 @@
+article_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Article:index" }
+    methods:  GET
+
+article_stat:
+    path:     /stat
+    defaults: { _controller: "AppBundle:Article:stat" }
+    methods:  GET
+
+article_no_publish:
+    path:     /brouillon
+    defaults: { _controller: "AppBundle:Article:noPublish" }
+    methods:  GET
+
+article_show:
+    path:     /{idArticle}/show
+    defaults: { _controller: "AppBundle:Article:show" }
+    methods:  [GET, POST]
+article_delete_commentaire:
+    path:     /{idArticle}/{idCommentaire}/show
+    defaults: { _controller: "AppBundle:Article:deleteComment" }
+    methods:  [GET, POST, DELETE]
+
+article_like:
+    path:     /{idArticle}/like
+    defaults: { _controller: "AppBundle:Article:like" }
+    methods:  [GET, POST]
+article_dislike:
+    path:     /{idArticle}/dislike
+    defaults: { _controller: "AppBundle:Article:dislike" }
+    methods:  [GET, POST]
+
+article_publish:
+    path:     /{idArticle}/publish
+    defaults: { _controller: "AppBundle:Article:publish" }
+    methods:  [GET, POST]
+
+article_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Article:new" }
+    methods:  [GET, POST]
+
+article_edit:
+    path:     /{idArticle}/edit
+    defaults: { _controller: "AppBundle:Article:edit" }
+    methods:  [GET, POST]
+
+article_delete:
+    path:     /{idArticle}/delete
+    defaults: { _controller: "AppBundle:Article:delete" }
+    methods:  [GET, DELETE]
+
+article_pdf:
+    path:     /{idArticle}/pdf
+    defaults: { _controller: "AppBundle:Article:pdf" }
+    methods:  [GET, DELETE]
+
+article_no_publish1:
+  path:     /brouillon1
+  defaults: { _controller: "AppBundle:Article:noPublish" }
+  methods:  GET
+
+
