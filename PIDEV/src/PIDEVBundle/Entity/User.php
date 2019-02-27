@@ -1,6 +1,5 @@
 <?php
-
-namespace PIDEVBundle\Entity;
+// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
@@ -26,4 +25,3 @@ class User extends BaseUser
         // your own logic
     }
 }
-
