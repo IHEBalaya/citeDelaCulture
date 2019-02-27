@@ -1,0 +1,94 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+<br>
+<div class="row">
+    <!-- Jelly-o sesame Section Strat -->
+    <div class="col-sm-7 col-md-8">
+        <div class="col-md-12">
+            <div class="news_item_image thumbnail">
+                <label>
+                    <h3 class="primary news_headings">{{ article.titreArticle }}
+                        </h3>
+                </label>
+
+                <img src="http://localhost:8080/Emir/web/uploads/{{ article.imageArticle }}" alt="image" class="img-responsive img_b2">
+
+
+                <div class="news_item_text_1">
+                    <p>
+                        {{ article.contenuArticle | raw}}
+                    </p>
+                </div>
+            </div>
+            Likes({{ nbrLike }})
+            Dislikes({{ nbrDislike }})
+            {% if reaction!=null %}
+                {% if reaction.reaction==0 %}
+                    <a href="{{ path('article_like', { 'idArticle': article.idArticle }) }}">
+                    <button class=" btn btn-success"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+                        </a>
+
+                {% endif %}
+                {% if reaction.reaction==1 %}
+
+                        <a href="{{ path('article_dislike', { 'idArticle': article.idArticle }) }}">
+                            <button class=" btn btn-danger"><i class="glyphicon glyphicon-thumbs-down"></i></button>
+                        </a>
+
+                {% endif %}
+            {% else %}
+
+
+                    <a href="{{ path('article_like', { 'idArticle': article.idArticle }) }}">
+                        <button class=" btn btn-success"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+                    </a>
+
+
+
+                    <a href="{{ path('article_dislike', { 'idArticle': article.idArticle }) }}">
+                        <button class=" btn btn-danger"><i class="glyphicon glyphicon-thumbs-down"></i></button>
+                    </a>
+
+            {% endif %}
+           
+
+            <h3 class="comments">{{ commentaireArticles|length }} Comments</h3><br />
+
+            {% for commentaireArticle in commentaireArticles %}
+
+
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object " src="{{ asset("images/c1.jpg")}}" width="70" height="70" alt="...">
+                        </a>
+                    </div>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ commentaireArticle.commentateur }} - {{ commentaireArticle.dateCommentaire |date("d/m/Y ") }}<span class="pull-right"></span></h4>
+                        <p>{{ commentaireArticle.contenuCommentaire | raw}}</p>
+                    </div>
+                    {% if app.user == commentaireArticle.commentateur %}
+                        <a href="{{ path('article_delete_commentaire', { 'idArticle': article.idArticle,'idCommentaire':commentaireArticle.idCommentaire }) }}" style="float: right">
+                            <button class=" btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                        </a>
+                    {% endif %}
+                </li>
+
+
+            </ul>
+            {% endfor %}
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+            {{ form_end(form) }}
+       {% if article.statutArticle!='public' %}
+
+{% endif %}
+        </div>
+    </div>
+
+{% endblock %}

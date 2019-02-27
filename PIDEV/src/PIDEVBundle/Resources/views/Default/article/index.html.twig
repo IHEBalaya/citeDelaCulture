@@ -1,0 +1,29 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+<br>
+    {% for article in articles %}
+    <div class="featured-post-wide thumbnail">
+        <img src="http://localhost:8080/Emir/web/uploads/{{ article.imageArticle }}" class="img-responsive">
+        <div class="featured-text relative-left">
+            <h3 class="primary"> {{ article.titreArticle }} </h3>
+            <p>{{ article.descriptionArticle }}</p>
+            <p class="additional-post-wrap">
+             <span class="additional-post">
+                <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> by&nbsp;<a href="#">{{ article.journaliste }}</a>
+            </span>
+            <span class="additional-post">
+                <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i><a href="#"> {{ article.datePublication |date("d/m/Y") }}</a>
+            </span>
+            </p>
+            <hr>
+            <p class="text-right">
+                <a href="{{ path('article_show', { 'idArticle': article.idArticle }) }}" class="btn btn-primary text-white">Lire plus</a>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(articles) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reaction</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idreaction</th>
+                <td>{{ reaction.idReaction }}</td>
+            </tr>
+            <tr>
+                <th>Reaction</th>
+                <td>{{ reaction.reaction }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reaction_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reaction_edit', { 'idReaction': reaction.idReaction }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

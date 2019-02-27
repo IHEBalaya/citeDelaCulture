@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commentairearticle</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idcommentaire</th>
+                <td>{{ commentaireArticle.idCommentaire }}</td>
+            </tr>
+            <tr>
+                <th>Contenucommentaire</th>
+                <td>{{ commentaireArticle.contenuCommentaire }}</td>
+            </tr>
+            <tr>
+                <th>Datecommentaire</th>
+                <td>{{ commentaireArticle.dateCommentaire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('commentairearticle_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('commentairearticle_edit', { 'idCommentaire': commentaireArticle.idCommentaire }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
